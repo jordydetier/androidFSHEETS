@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/standingsFragmentPremierLeague"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsPremierLeague"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="524"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="Premier League"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/standingsFragmentLaLiga"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsLaLiga"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="775"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="La Liga Santander"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/standingsFragmentSerieA"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsSerieA"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="891"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="Serie A"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/standingsFragmentBundesliga"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsBundesliga"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="754"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="Bundesliga"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/standingsFragmentLigue1"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsLigue1"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="525"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="Ligue 1"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/standingsFragmentEredivisie"
+        android:name="com.example.android.forzasheets.ui.standings.StandingsFragment"
+        android:label="fragmentStandingsEredivisie"
+        tools:layout="@layout/fragment_standings">
+        <action
+            android:id="@+id/action_standingsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <argument
+            android:name="leagueId"
+            android:defaultValue="566"
+            app:argType="string" />
+        <argument
+            android:name="leagueName"
+            android:defaultValue="Eredivisie"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamDetailFragment"
+        android:name="com.example.android.forzasheets.ui.teamDetails.TeamDetailFragment"
+        android:label="fragmentTeamDetail"
+        tools:layout="@layout/fragment_team_detail">
+        <argument
+            android:name="teamId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_teamDetailFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.android.forzasheets.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.example.android.forzasheets.ui.playerDetails.PlayerDetailsFragment"
+        android:label="fragment_player_details"
+        tools:layout="@layout/fragment_player_details">
+        <argument
+            android:name="playerId"
+            app:argType="string" />
+        <argument
+            android:name="teamLogo"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

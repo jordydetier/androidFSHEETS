@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- StandingsFragment -->
+    <dimen name="standings_header_textsize">11sp</dimen>
+    <!-- PlayerDetailsFragment -->
+    <dimen name="player_details_card_label">10sp</dimen>
+    <dimen name="player_details_stats_textsize">20sp</dimen>
+
+
+</resources>

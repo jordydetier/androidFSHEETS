@@ -1,0 +1,138 @@
+package com.example.android.forzasheets.repository
+
+import com.example.android.forzasheets.models.player.detail.GetPlayerDetailResponse
+import com.example.android.forzasheets.models.player.detail.PlayerDetail
+import com.example.android.forzasheets.models.player.team.GetPlayerTeamResponse
+import com.example.android.forzasheets.models.player.team.PlayerTeam
+import com.example.android.forzasheets.models.Standings.GetStandingsResponse
+import com.example.android.forzasheets.models.Standings.Standings
+import com.example.android.forzasheets.models.team.GetTeamResponse
+import com.example.android.forzasheets.models.team.Team
+import com.example.android.forzasheets.network.FootballApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+class ForzaSheetsRepository {
+
+    fun getStandings(
+        leagueId: String,
+        onSuccess: (standings: List<Standings>) -> Unit,
+        onError: () -> Unit
+    ) {
+        FootballApi.retrofitService.getStandings(leagueId = leagueId)
+            .enqueue(object : Callback<GetStandingsResponse> {
+                override fun onResponse(
+                    call: Call<GetStandingsResponse>,
+                    response: Response<GetStandingsResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.response.standings.first())
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetStandingsResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
+    fun getTeamDetails(
+        teamId: String,
+        onSuccess: (team: Team) -> Unit,
+        onError: () -> Unit
+    ) {
+        FootballApi.retrofitService.getTeamDetails(teamId = teamId)
+            .enqueue(object : Callback<GetTeamResponse> {
+                override fun onResponse(
+                    call: Call<GetTeamResponse>,
+                    response: Response<GetTeamResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.response.teams.first())
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetTeamResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
+    fun getAllPlayersFromTeam(
+        teamId: String,
+        onSuccess: (players : List<PlayerTeam>) -> Unit,
+        onError: () -> Unit
+    ) {
+        FootballApi.retrofitService.getAllPlayersFromTeam(teamId = teamId)
+            .enqueue(object : Callback<GetPlayerTeamResponse> {
+                override fun onResponse(
+                    call: Call<GetPlayerTeamResponse>,
+                    response: Response<GetPlayerTeamResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.response.playersTeam)
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetPlayerTeamResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+    fun getPlayerDetails(
+        playerId: String,
+        onSuccess: (playerDetail : PlayerDetail) -> Unit,
+        onError: () -> Unit
+    ) {
+        FootballApi.retrofitService.getPlayerDetails(playerId = playerId)
+            .enqueue(object : Callback<GetPlayerDetailResponse> {
+                override fun onResponse(
+                    call: Call<GetPlayerDetailResponse>,
+                    response: Response<GetPlayerDetailResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody.response.playersDetail.first())
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetPlayerDetailResponse>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
+
+}

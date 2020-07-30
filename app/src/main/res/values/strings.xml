@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Forza sheets</string>
+    <!--  HomeFragment  -->
+    <string name="home_imgView_description">logo</string>
+
+    <!-- StandingsFragment-->
+    <string name="season">Season 2019–2020</string>
+    <string name="standings_imgView_description">League logo</string>
+    <string name="standings_header_matches_played">MP</string>
+    <string name="standings_header_matches_won">W</string>
+    <string name="standings_header_matches_lost">L</string>
+    <string name="standings_header_matches_draw">D</string>
+    <string name="standings_header_points">Pts</string>
+    <string name="standings_header_title">Regular Season</string>
+
+    <!-- TeamDetailsFragment -->
+
+
+    <!-- PlayerDetailsFragment-->
+    <string name="player_details_basic_information_label">Basic Information</string>
+    <string name="player_details_stats_label">Stats</string>
+    <string name="player_details_nationality_label">nationality</string>
+    <string name="player_details_position_label">position</string>
+    <string name="player_details_height_label">height</string>
+    <string name="player_details_weight_label">weight</string>
+    <string name="player_details_birthdate_label">date of birth</string>
+    <string name="player_details_age_label">age</string>
+    <string name="player_details_goals_description">Goals</string>
+    <string name="player_details_assists_description">Assists</string>
+    <string name="player_details_yellow_description">Yellow cards</string>
+    <string name="player_details_red_description">Red cards</string>
+    <string name="player_details_appearances_description">Appearances</string>
+    <string name="player_details_minutes_description">Minutes played</string>
+
+
+
+
+    <!-- Menu -->
+    <string name="home">Home</string>
+    <string name="premier_league">Premier League</string>
+    <string name="bundesliga">Bundesliga</string>
+    <string name="la_liga">La Liga Santander</string>
+    <string name="serie_a">Serie A</string>
+    <string name="ligue_1">Ligue 1</string>
+    <string name="eredivisie">Eredivisie</string>
+
+    <!-- Other-->
+    <string name="no_data">No data</string>
+    <string name="team_logo_description">Team logo</string>
+    <string name="error_fetch_standings">Please check your internet connection</string>
+
+
+</resources>
