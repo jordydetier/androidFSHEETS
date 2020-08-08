@@ -6,7 +6,13 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
+@Entity(tableName = "matches")
 data class StandingsMatches(
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "matches_id")
+    val matchesId: Int,
+
     @ColumnInfo(name = "matches_played")
     @SerializedName("matchsPlayed")
     val matchesPlayed: Int,

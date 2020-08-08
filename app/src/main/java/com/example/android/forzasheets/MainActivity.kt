@@ -1,5 +1,6 @@
 package com.example.android.forzasheets
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -7,9 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.android.forzasheets.database.ForzaSheetsDatabase
 import com.example.android.forzasheets.databinding.ActivityMainBinding
-import com.example.android.forzasheets.helper.InflateDatabase
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,10 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding =
             DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-
-
-       val dataSource = ForzaSheetsDatabase.getInstance(application).forzaSheetsDatabaseDao
-       InflateDatabase(dataSource).inflateDb()
 
         drawerLayout = binding.drawerLayout
         navController = this.findNavController(R.id.myNavHostFragment)

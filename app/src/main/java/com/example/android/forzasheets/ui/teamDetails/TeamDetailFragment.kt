@@ -16,7 +16,6 @@ import com.example.android.forzasheets.MainActivity
 import com.example.android.forzasheets.R
 import com.example.android.forzasheets.database.ForzaSheetsDatabase
 import com.example.android.forzasheets.databinding.FragmentTeamDetailBinding
-import com.example.android.forzasheets.helper.InflateDatabase
 import com.example.android.forzasheets.models.team.Team
 
 
@@ -29,7 +28,6 @@ class TeamDetailFragment : Fragment() {
     private lateinit var teamLogo: String
     private lateinit var adapter: TeamDetailsPlayersAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var teamForRoom: Team
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

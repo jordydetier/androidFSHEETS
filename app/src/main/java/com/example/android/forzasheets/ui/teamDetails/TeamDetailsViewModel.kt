@@ -5,12 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.forzasheets.models.player.team.PlayerTeam
 import com.example.android.forzasheets.models.team.Team
-import com.example.android.forzasheets.repository.ForzaSheetsRepository
+import com.example.android.forzasheets.repository.ForzaSheetsApiRepository
 
 class TeamDetailsViewModel(
     teamId: String
 ) : ViewModel() {
-    private var forzaSheetsRepository = ForzaSheetsRepository()
+    private var forzaSheetsRepository = ForzaSheetsApiRepository()
 
 
     private val _teamId = MutableLiveData<String>()

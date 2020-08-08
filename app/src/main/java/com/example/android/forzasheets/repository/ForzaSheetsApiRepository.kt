@@ -13,37 +13,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ForzaSheetsRepository {
-
-    fun getStandings(
-        leagueId: String,
-        onSuccess: (standings: List<Standings>) -> Unit,
-        onError: () -> Unit
-    ) {
-        FootballApi.retrofitService.getStandings(leagueId = leagueId)
-            .enqueue(object : Callback<GetStandingsResponse> {
-                override fun onResponse(
-                    call: Call<GetStandingsResponse>,
-                    response: Response<GetStandingsResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()
-
-                        if (responseBody != null) {
-                            onSuccess.invoke(responseBody.response.standings.first())
-                        } else {
-                            onError.invoke()
-                        }
-                    } else {
-                        onError.invoke()
-                    }
-                }
-
-                override fun onFailure(call: Call<GetStandingsResponse>, t: Throwable) {
-                    onError.invoke()
-                }
-            })
-    }
+class ForzaSheetsApiRepository {
 
     fun getTeamDetails(
         teamId: String,
