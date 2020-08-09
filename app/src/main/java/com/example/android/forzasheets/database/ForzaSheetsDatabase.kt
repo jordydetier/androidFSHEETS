@@ -5,8 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.android.forzasheets.models.standing.Standings
-
-@Database(entities = [Standings::class], version = 7, exportSchema = false)
+@Database(entities = [Standings::class], version = 8, exportSchema = false)
 abstract class ForzaSheetsDatabase : RoomDatabase() {
 
     abstract val forzaSheetsDatabaseDao: ForzaSheetsDatabaseDao

@@ -56,7 +56,7 @@ class TeamDetailFragment : Fragment() {
         binding.playersList.layoutManager = layoutManager
         adapter =
             TeamDetailsPlayersAdapter(mutableListOf(), TeamDetailsPlayersAdapter.OnClickListener {
-                if (null != it) {
+                if (it != null) {
                     this.findNavController()
                         .navigate(
                             TeamDetailFragmentDirections.actionTeamDetailFragmentToPlayerDetailsFragment(
@@ -68,7 +68,7 @@ class TeamDetailFragment : Fragment() {
             })
         binding.playersList.adapter = adapter
 
-        binding.progressBar.visibility = View.VISIBLE
+        binding.progressBarTeamDetail.visibility = View.VISIBLE
         getTeamDetails()
         getAllPlayersFromTeam()
         return binding.root
@@ -95,7 +95,7 @@ class TeamDetailFragment : Fragment() {
                 bindElements(team)
                 flags[0] = true
                 if (flags.all { f -> f }) {
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBarTeamDetail.visibility = View.GONE
                 }
 
             },
@@ -105,7 +105,7 @@ class TeamDetailFragment : Fragment() {
                     getString(R.string.error_fetch_standings),
                     Toast.LENGTH_SHORT
                 ).show()
-                binding.progressBar.visibility = View.GONE
+                binding.progressBarTeamDetail.visibility = View.GONE
 
             }
         )
@@ -120,7 +120,7 @@ class TeamDetailFragment : Fragment() {
                 adapter.appendPlayers(playersWithoutNull)
                 flags[1] = true
                 if (flags.all { f -> f }) {
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBarTeamDetail.visibility = View.GONE
                 }
             },
             onError = {
@@ -129,7 +129,7 @@ class TeamDetailFragment : Fragment() {
                     getString(R.string.error_fetch_standings),
                     Toast.LENGTH_SHORT
                 ).show()
-                binding.progressBar.visibility = View.GONE
+                binding.progressBarTeamDetail.visibility = View.GONE
 
             }
         )

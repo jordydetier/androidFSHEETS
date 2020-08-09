@@ -44,7 +44,7 @@ class PlayerDetailsFragment : Fragment() {
             container,
             false
         )
-        binding.progressBar.visibility = View.VISIBLE
+        binding.progressBarPlayerDetail.visibility = View.VISIBLE
         getPlayerDetails()
         return binding.root
     }
@@ -67,14 +67,14 @@ class PlayerDetailsFragment : Fragment() {
                     getString(R.string.error_fetch_standings),
                     Toast.LENGTH_SHORT
                 ).show()
-                binding.progressBar.visibility = View.GONE
+                binding.progressBarPlayerDetail.visibility = View.GONE
 
             }
         )
     }
 
     private fun bindElements(player: PlayerDetail) {
-        binding.progressBar.visibility = View.GONE
+        binding.progressBarPlayerDetail.visibility = View.GONE
         binding.playerDetailFirstName.text = player.firstName
         binding.playerDetailLastName.text = player.lastName
         binding.playerDetailNationality.text = player.nationality

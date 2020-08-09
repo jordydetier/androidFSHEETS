@@ -69,7 +69,7 @@ class StandingsFragment : Fragment() {
 
         binding.standingsList.adapter = adapter
         binding.leagueName.text = leagueName
-        binding.progressBar.visibility = View.VISIBLE
+        binding.progressBarStandings.visibility = View.VISIBLE
 
         getStandings()
 
@@ -81,7 +81,7 @@ class StandingsFragment : Fragment() {
             Observer { standings ->
                 adapter.appendStandings(standings)
                 flag = true
-                binding.progressBar.visibility = View.GONE
+                binding.progressBarStandings.visibility = View.GONE
             })
     }
 

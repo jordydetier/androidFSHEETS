@@ -19,10 +19,6 @@ data class Standings(
     @SerializedName("teamName")
     val name: String,
 
-    @ColumnInfo(name = "group")
-    @SerializedName("group")
-    val group: String,
-
     @ColumnInfo(name = "logo")
     @SerializedName("logo")
     val logo: String,
@@ -36,7 +32,7 @@ data class Standings(
     val points: Int,
 
     @SerializedName("all")
-    @Embedded()
+    @Embedded
     val matchesInfo: StandingsMatches,
 
     @ColumnInfo(name = "goals_diff")
