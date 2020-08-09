@@ -4,8 +4,6 @@ import com.example.android.forzasheets.models.player.detail.GetPlayerDetailRespo
 import com.example.android.forzasheets.models.player.detail.PlayerDetail
 import com.example.android.forzasheets.models.player.team.GetPlayerTeamResponse
 import com.example.android.forzasheets.models.player.team.PlayerTeam
-import com.example.android.forzasheets.models.Standings.GetStandingsResponse
-import com.example.android.forzasheets.models.Standings.Standings
 import com.example.android.forzasheets.models.team.GetTeamResponse
 import com.example.android.forzasheets.models.team.Team
 import com.example.android.forzasheets.network.FootballApi
@@ -47,7 +45,7 @@ class ForzaSheetsApiRepository {
 
     fun getAllPlayersFromTeam(
         teamId: String,
-        onSuccess: (players : List<PlayerTeam>) -> Unit,
+        onSuccess: (players: List<PlayerTeam>) -> Unit,
         onError: () -> Unit
     ) {
         FootballApi.retrofitService.getAllPlayersFromTeam(teamId = teamId)
@@ -74,9 +72,10 @@ class ForzaSheetsApiRepository {
                 }
             })
     }
+
     fun getPlayerDetails(
         playerId: String,
-        onSuccess: (playerDetail : PlayerDetail) -> Unit,
+        onSuccess: (playerDetail: PlayerDetail) -> Unit,
         onError: () -> Unit
     ) {
         FootballApi.retrofitService.getPlayerDetails(playerId = playerId)

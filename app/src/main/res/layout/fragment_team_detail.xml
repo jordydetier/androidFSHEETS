@@ -30,6 +30,7 @@
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/team_logo_description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +41,8 @@
                 android:id="@+id/cardViewTeamName"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:cardCornerRadius="10dp"
                 android:layout_marginEnd="20dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/cardViewFounded"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -72,7 +73,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider13"
@@ -119,7 +121,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider14"
@@ -135,8 +138,8 @@
                 android:id="@+id/cardViewCountry"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:cardCornerRadius="10dp"
                 android:layout_marginStart="20dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -167,7 +170,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider15"
@@ -178,7 +182,6 @@
                         android:background="@color/divider4" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
 
             <View
@@ -196,7 +199,7 @@
                 android:id="@+id/stadiumInfoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stadium info:"
+                android:text="@string/stadium_info_title"
                 android:textColor="@color/mainTextColor"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -210,8 +213,8 @@
                 android:id="@+id/cardViewStadiumName"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:cardCornerRadius="10dp"
                 android:layout_marginEnd="20dp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/cardViewStadiumCity"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -242,7 +245,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider16"
@@ -288,7 +292,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider17"
@@ -336,7 +341,8 @@
                         android:layout_marginBottom="13dp"
                         android:textAlignment="center"
                         android:textColor="@color/mainTextColor"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
 
                     <View
                         android:id="@+id/divider18"
@@ -366,7 +372,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Players:"
+                android:text="@string/players_title"
                 android:textColor="@color/mainTextColor"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -381,8 +387,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Pos"
-                android:textSize="12dp"
+                android:text="@string/position_label"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/playersList"
                 app:layout_constraintStart_toStartOf="@id/playersList"
@@ -395,9 +401,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
-                android:text="Age"
+                android:text="@string/age_label"
                 android:textAlignment="center"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/playersList"
                 app:layout_constraintEnd_toEndOf="@id/playersList"
@@ -409,9 +415,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
-                android:text="Nationality"
+                android:text="@string/nationality_label"
                 android:textAlignment="center"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/playersList"
                 app:layout_constraintEnd_toStartOf="@+id/PlayerAgeLabel"
@@ -423,9 +429,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Name"
+                android:text="@string/name_label"
                 android:textAlignment="center"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/playersList"
                 app:layout_constraintStart_toEndOf="@+id/playerPositionLabel"

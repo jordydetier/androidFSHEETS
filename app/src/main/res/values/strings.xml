@@ -11,10 +11,15 @@
     <string name="standings_header_matches_lost">L</string>
     <string name="standings_header_matches_draw">D</string>
     <string name="standings_header_points">Pts</string>
+    <string name="standings_goals_diff">+/-</string>
     <string name="standings_header_title">Regular Season</string>
 
     <!-- TeamDetailsFragment -->
-
+    <string name="players_title">Players:</string>
+    <string name="position_label">Pos</string>
+    <string name="age_label">Age</string>
+    <string name="nationality_label">Nationality</string>
+    <string name="name_label">Name</string>
 
     <!-- PlayerDetailsFragment-->
     <string name="player_details_basic_information_label">Basic Information</string>
@@ -33,8 +38,6 @@
     <string name="player_details_minutes_description">Minutes played</string>
 
 
-
-
     <!-- Menu -->
     <string name="home">Home</string>
     <string name="premier_league">Premier League</string>
@@ -48,6 +51,7 @@
     <string name="no_data">No data</string>
     <string name="team_logo_description">Team logo</string>
     <string name="error_fetch_standings">Please check your internet connection</string>
+    <string name="stadium_info_title">Stadium info:</string>
 
 
 </resources>

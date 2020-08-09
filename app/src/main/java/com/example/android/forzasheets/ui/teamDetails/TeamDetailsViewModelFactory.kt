@@ -5,10 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 
 class TeamDetailsViewModelFactory(private val teamId: String) : ViewModelProvider.Factory {
 
-    /**
-     * Creates a new ViewModel of type [modelClass]
-     *
-     */
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(TeamDetailsViewModel::class.java)) {

@@ -1,4 +1,4 @@
-package com.example.android.forzasheets.models.Standings
+package com.example.android.forzasheets.models.standing
 
 import androidx.room.*
 import com.google.gson.annotations.SerializedName
@@ -45,5 +45,5 @@ data class Standings(
 
     @ColumnInfo(name = "league_id")
     var leagueId: String
-    )
+)
 

@@ -10,7 +10,7 @@ import com.example.android.forzasheets.repository.ForzaDatabaseRepository
 import kotlinx.coroutines.*
 
 
-class StandingsViewModel(application: Application,leagueId: String): ViewModel() {
+class StandingsViewModel(application: Application, leagueId: String) : ViewModel() {
 
     private val viewModelJob = SupervisorJob()
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
@@ -20,7 +20,7 @@ class StandingsViewModel(application: Application,leagueId: String): ViewModel()
     private val repository = ForzaDatabaseRepository(database = database)
 
     init {
-        if (manager.isConnectedToInternet!!){
+        if (manager.isConnectedToInternet!!) {
             viewModelScope.launch {
                 repository.refreshStandings(leagueId)
             }

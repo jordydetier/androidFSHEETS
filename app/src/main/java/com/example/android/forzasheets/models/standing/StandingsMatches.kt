@@ -1,4 +1,4 @@
-package com.example.android.forzasheets.models.Standings
+package com.example.android.forzasheets.models.standing
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

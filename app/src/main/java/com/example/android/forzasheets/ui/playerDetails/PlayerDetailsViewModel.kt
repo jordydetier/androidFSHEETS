@@ -10,14 +10,9 @@ class PlayerDetailsViewModel(
     playerId: String
 ) : ViewModel() {
     private var forzaSheetsRepository = ForzaSheetsApiRepository()
-
     private val _playerId = MutableLiveData<String>()
     private var _player = MutableLiveData<PlayerDetail>()
 
-
-    /**
-     * Value of the selected movie
-     */
     val selectedPlayerId: LiveData<String>
         get() = _playerId
 

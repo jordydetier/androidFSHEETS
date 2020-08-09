@@ -6,18 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.forzasheets.MainActivity
 import com.example.android.forzasheets.R
 import com.example.android.forzasheets.databinding.FragmentStandingsBinding
-import com.example.android.forzasheets.models.Standings.Standings
-
 
 class StandingsFragment : Fragment() {
 
@@ -47,7 +43,7 @@ class StandingsFragment : Fragment() {
         val viewModelFactory =
             StandingsViewModelFactory(requireNotNull(this.activity).application, leagueId)
         viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(StandingsViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(StandingsViewModel::class.java)
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -61,7 +57,7 @@ class StandingsFragment : Fragment() {
         )
         binding.standingsList.layoutManager = layoutManager
         adapter = StandingsAdapter(mutableListOf(), StandingsAdapter.OnClickListener {
-            if (null != it) {
+            if (it != null) {
                 this.findNavController()
                     .navigate(
                         StandingsFragmentDirections.actionStandingsFragmentToTeamDetailFragment(
@@ -81,13 +77,12 @@ class StandingsFragment : Fragment() {
     }
 
     private fun getStandings() {
-        viewModel.standings.observe(this.viewLifecycleOwner, object : Observer<List<Standings>> {
-            override fun onChanged(@Nullable standings: List<Standings>) {
+        viewModel.standings.observe(this.viewLifecycleOwner,
+            Observer { standings ->
                 adapter.appendStandings(standings)
                 flag = true
                 binding.progressBar.visibility = View.GONE
-            }
-        })
+            })
     }
 
 }

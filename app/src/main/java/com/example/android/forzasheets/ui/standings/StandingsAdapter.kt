@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.android.forzasheets.R
-import com.example.android.forzasheets.models.Standings.Standings
+import com.example.android.forzasheets.models.standing.Standings
 
 
 class StandingsAdapter(
@@ -36,11 +36,13 @@ class StandingsAdapter(
     }
 
     fun appendStandings(standings: List<Standings>) {
-        this.standings.addAll(standings)
-        notifyItemRangeInserted(
-            this.standings.size,
-            standings.size.minus(1)
-        )
+        if (this.standings != standings) {
+            this.standings.addAll(standings)
+            notifyItemRangeInserted(
+                this.standings.size,
+                standings.size.minus(1)
+            )
+        }
     }
 
     inner class StandingsViewHolder(itemView: View) :
@@ -53,6 +55,7 @@ class StandingsAdapter(
         private val matchesDrawn: TextView = itemView.findViewById(R.id.matches_drawn)
         private val matchesWon: TextView = itemView.findViewById(R.id.matches_won)
         private val matchesPlayed: TextView = itemView.findViewById(R.id.matches_played)
+        private val goalsDiff: TextView = itemView.findViewById(R.id.goals_diff)
         fun bind(item: Standings) {
             Glide.with(itemView)
                 .load(item.logo)
@@ -65,7 +68,7 @@ class StandingsAdapter(
             matchesDrawn.text = item.matchesInfo.matchesDrawn.toString()
             matchesWon.text = item.matchesInfo.matchesWon.toString()
             matchesPlayed.text = item.matchesInfo.matchesPlayed.toString()
-
+            goalsDiff.text = item.goalsDiff.toString()
         }
     }
 

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.android.forzasheets.MainActivity
@@ -34,7 +34,7 @@ class PlayerDetailsFragment : Fragment() {
 
 
         val viewModelFactory = PlayerDetailsViewModelFactory(playerId)
-        viewModel = ViewModelProviders.of(
+        viewModel = ViewModelProvider(
             this, viewModelFactory
         ).get(PlayerDetailsViewModel::class.java)
 
@@ -44,7 +44,6 @@ class PlayerDetailsFragment : Fragment() {
             container,
             false
         )
-        // Inflate the layout for this fragment
         binding.progressBar.visibility = View.VISIBLE
         getPlayerDetails()
         return binding.root

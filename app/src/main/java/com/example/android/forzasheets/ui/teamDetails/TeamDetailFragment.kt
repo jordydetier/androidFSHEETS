@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.android.forzasheets.MainActivity
 import com.example.android.forzasheets.R
-import com.example.android.forzasheets.database.ForzaSheetsDatabase
 import com.example.android.forzasheets.databinding.FragmentTeamDetailBinding
 import com.example.android.forzasheets.models.team.Team
 
@@ -44,7 +43,7 @@ class TeamDetailFragment : Fragment() {
         teamId = TeamDetailFragmentArgs.fromBundle(requireArguments()).teamId
 
         val viewModelFactory = TeamDetailsViewModelFactory(teamId)
-        viewModel = ViewModelProviders.of(
+        viewModel = ViewModelProvider(
             this, viewModelFactory
         ).get(TeamDetailsViewModel::class.java)
 

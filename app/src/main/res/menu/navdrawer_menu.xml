@@ -5,38 +5,33 @@
     <item
         android:id="@+id/homeFragment"
         android:title="@string/home"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/standingsFragmentPremierLeague"
         android:title="@string/premier_league"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/standingsFragmentBundesliga"
         android:title="@string/bundesliga"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/standingsFragmentLaLiga"
         android:title="@string/la_liga"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/standingsFragmentSerieA"
         android:title="@string/serie_a"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/standingsFragmentLigue1"
         android:title="@string/ligue_1"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/standingsFragmentEredivisie"
         android:title="@string/eredivisie"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
 </menu>

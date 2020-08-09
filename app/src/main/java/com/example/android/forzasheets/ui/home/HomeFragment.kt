@@ -27,12 +27,24 @@ class HomeFragment : Fragment() {
             false
         )
 
-        binding.premierLeague.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentPremierLeague)}
-        binding.bundesliga.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentBundesliga)}
-        binding.laLiga.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentLaLiga)}
-        binding.serieA.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentSerieA)}
-        binding.ligue1.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentLigue1)}
-        binding.eredivisie.setOnClickListener {  this.findNavController().navigate(R.id.standingsFragmentEredivisie)}
+        binding.premierLeague.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentPremierLeague)
+        }
+        binding.bundesliga.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentBundesliga)
+        }
+        binding.laLiga.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentLaLiga)
+        }
+        binding.serieA.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentSerieA)
+        }
+        binding.ligue1.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentLigue1)
+        }
+        binding.eredivisie.setOnClickListener {
+            this.findNavController().navigate(R.id.standingsFragmentEredivisie)
+        }
 
 
         return binding.root

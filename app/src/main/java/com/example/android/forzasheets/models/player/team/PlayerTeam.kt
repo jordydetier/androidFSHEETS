@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "player_team")
-class PlayerTeam (
+class PlayerTeam(
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "player_id")
     @SerializedName("player_id")

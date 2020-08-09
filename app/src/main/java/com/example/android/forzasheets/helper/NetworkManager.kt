@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
-class NetworkManager constructor(var applicationContext: Context) {
+class NetworkManager constructor(private var applicationContext: Context) {
     val isConnectedToInternet: Boolean?
         get() = with(
             applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE)
@@ -13,9 +13,10 @@ class NetworkManager constructor(var applicationContext: Context) {
             isConnectedToInternet()
         }
 
-    fun ConnectivityManager.isConnectedToInternet() = isConnected(getNetworkCapabilities(activeNetwork))
+    private fun ConnectivityManager.isConnectedToInternet() =
+        isConnected(getNetworkCapabilities(activeNetwork))
 
-    fun isConnected(networkCapabilities: NetworkCapabilities?): Boolean {
+    private fun isConnected(networkCapabilities: NetworkCapabilities?): Boolean {
         return when (networkCapabilities) {
             null -> false
             else -> with(networkCapabilities) {
