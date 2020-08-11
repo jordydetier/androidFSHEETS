@@ -4,6 +4,11 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
+/**
+ * A Network manager.
+ *
+ * This class helps us know if the device is connected to the internet. This is used for the standings fragment
+ */
 class NetworkManager constructor(private var applicationContext: Context) {
     val isConnectedToInternet: Boolean?
         get() = with(

@@ -20,14 +20,53 @@ import com.example.android.forzasheets.models.team.Team
 
 class TeamDetailFragment : Fragment() {
 
+    /**
+     * Binding object to access the fragment's layout
+     */
     private lateinit var binding: FragmentTeamDetailBinding
+
+    /**
+     * ViewModel which contains the business-logic
+     */
     private lateinit var viewModel: TeamDetailsViewModel
+
+    /**
+     * Array of booleans to check if a loading spinner should be shown or not
+     */
     private lateinit var flags: BooleanArray
+
+    /**
+     * Id of the team to get the correct data from the API
+     */
     private lateinit var teamId: String
+
+    /**
+     * Image-URL to show the team crest of the team
+     */
     private lateinit var teamLogo: String
+
+    /**
+     * Holds a reference to the StandingsAdapter
+     */
     private lateinit var adapter: TeamDetailsPlayersAdapter
+
+    /**
+     * Holds a reference to the LinearLayoutManager
+     */
     private lateinit var layoutManager: LinearLayoutManager
 
+    /**
+     * Inflates the fragment's view, overridden from Fragment.java
+     *
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return Return the View for the fragment's UI
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -74,6 +113,10 @@ class TeamDetailFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Binds all the elements with data from the chosen team
+     *
+     */
     private fun bindElements(team: Team) {
         binding.teamName.text = team.name
         binding.teamCountry.text = team.country
@@ -88,6 +131,10 @@ class TeamDetailFragment : Fragment() {
             .into(binding.teamLogo)
     }
 
+    /**
+     * Retrieves a Team object and gives that to the bindElements function. Uses Higher order functions to validate success and error
+     *
+     */
     private fun getTeamDetails() {
         viewModel.getTeamDetails(
             viewModel.selectedTeamId.value!!,
@@ -111,6 +158,10 @@ class TeamDetailFragment : Fragment() {
         )
     }
 
+    /**
+     * Retrieves a list of players from the selected team and appends those to the adapter. Uses Higher order functions to validate success and error
+     *
+     */
     private fun getAllPlayersFromTeam() {
         viewModel.getAllPlayersFromTeam(
             teamId,

@@ -5,6 +5,18 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+/**
+ * The class represents the retrieved PlayerTeam
+ *
+ * This class is used to represent the PlayerTeam retrieved from the API
+ *
+ * @param [id] unique id to represent each playerTeam object
+ * @param [playerName] full name of the player
+ * @param [position] position of the player
+ * @param [positionNumber] number to help sort players by position
+ * @param [age] age of the player
+ * @param [nationality] nationality of the player
+ */
 @Entity(tableName = "player_team")
 class PlayerTeam(
     @PrimaryKey(autoGenerate = false)

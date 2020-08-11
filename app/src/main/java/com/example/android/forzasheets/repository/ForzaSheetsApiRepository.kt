@@ -11,8 +11,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * A repository.
+ *
+ * This class fetches data from an API using the API.kt file.
+ */
+
 class ForzaSheetsApiRepository {
 
+    /**
+     * Fetches details from a team with a certain [teamId] and activates an [onSuccess] or [onError] invocation.
+     */
     fun getTeamDetails(
         teamId: String,
         onSuccess: (team: Team) -> Unit,
@@ -43,6 +52,9 @@ class ForzaSheetsApiRepository {
             })
     }
 
+    /**
+     * Fetches all players from a team with a certain [teamId] and activates an [onSuccess] or [onError] invocation.
+     */
     fun getAllPlayersFromTeam(
         teamId: String,
         onSuccess: (players: List<PlayerTeam>) -> Unit,
@@ -73,6 +85,9 @@ class ForzaSheetsApiRepository {
             })
     }
 
+    /**
+     * Fetches details from a player with a certain [playerId] and activates an [onSuccess] or [onError] invocation.
+     */
     fun getPlayerDetails(
         playerId: String,
         onSuccess: (playerDetail: PlayerDetail) -> Unit,

@@ -10,21 +10,34 @@ import com.example.android.forzasheets.repository.ForzaSheetsApiRepository
 class TeamDetailsViewModel(
     teamId: String
 ) : ViewModel() {
+
+    /**
+     * Repository to retrieve movies from the online database
+     */
     private var forzaSheetsRepository = ForzaSheetsApiRepository()
 
-
+    /**
+     * Encapsulated id of the selected team
+     *
+     */
     private val _teamId = MutableLiveData<String>()
 
     /**
-     * Value of the selected movie
+     * Value of the id of the selected team
      */
     val selectedTeamId: LiveData<String>
         get() = _teamId
 
+    /**
+     * Gets called during the creation of the viewmodel, allocates the passed team id to the property
+     */
     init {
         _teamId.value = teamId
     }
 
+    /**
+     * Delegates the call from the view to the repository
+     */
     fun getTeamDetails(
         teamId: String,
         onSuccess: (team: Team) -> Unit,
@@ -41,6 +54,9 @@ class TeamDetailsViewModel(
         )
     }
 
+    /**
+     * Delegates the call from the view to the repository
+     */
     fun getAllPlayersFromTeam(
         teamId: String,
         onSuccess: (players: List<PlayerTeam>) -> Unit,

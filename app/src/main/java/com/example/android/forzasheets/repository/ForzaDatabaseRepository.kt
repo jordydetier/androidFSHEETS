@@ -10,14 +10,24 @@ import kotlinx.coroutines.withContext
 import retrofit2.await
 
 
+/**
+ * A Standings repository.
+ *
+ * This class fetches standings from the room database
+ */
+
 class ForzaDatabaseRepository(private val database: ForzaSheetsDatabase) {
 
-    val standings: LiveData<List<Standings>> = database.forzaSheetsDatabaseDao.getAllStandings()
-
+    /**
+     * Fetches standings from one league with a certain [leagueId]
+     */
     fun getStandingsFromOneLeague(leagueId: String): LiveData<List<Standings>> {
         return database.forzaSheetsDatabaseDao.getAllStandingsFromOneLeague(leagueId = leagueId)
     }
 
+    /**
+     * Inserts/updates standings to the room database
+     */
     suspend fun refreshStandings(leagueId: String) {
         withContext(Dispatchers.IO) {
             when (leagueId) {

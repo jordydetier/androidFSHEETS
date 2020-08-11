@@ -5,6 +5,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.forzasheets.ui.teamDetails.TeamDetailsViewModel
 
+/**
+ * Standings' ViewModelFactory
+ *
+ * This Factory is used to create a viewmodel with specific parameters
+ *
+ * @param [application] a reference to the current application,  by the viewmodel for AndroidViewModel()
+ * @param [leagueId] the id of the selected league which will be used by the viewmodel
+ *
+ */
 class StandingsViewModelFactory(
     private val application: Application,
     private val leagueId: String

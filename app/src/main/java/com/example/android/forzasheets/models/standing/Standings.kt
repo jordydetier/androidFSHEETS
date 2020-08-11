@@ -3,6 +3,22 @@ package com.example.android.forzasheets.models.standing
 import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
+/**
+ * The class represents the retrieved Standings
+ *
+ * This class is used to represent the Standings retrieved from the API
+ *
+ * @param [rank] place where the team stands in the table
+ * @param [id] unique id to represent each standings object
+ * @param [name] name of the team
+ * @param [logo] imageURL for the team logo
+ * @param [forme] form the team is in
+ * @param [points] points earned
+ * @param [matchesInfo] object that has more info about the matches played
+ * @param [goalsDiff] goal difference
+ * @param [leagueId] unique id to represent which league the team plays in
+ */
+
 @Entity(tableName = "standings")
 data class Standings(
 

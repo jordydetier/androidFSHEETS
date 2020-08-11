@@ -11,10 +11,26 @@ import com.example.android.forzasheets.MainActivity
 import com.example.android.forzasheets.R
 import com.example.android.forzasheets.databinding.FragmentHomeBinding
 
-
+/**
+ * Fragment which allows the user to choose between different leagues to look at
+ *
+ * This fragment allows the user select a league to view the standings of that league
+ */
 class HomeFragment : Fragment() {
 
 
+    /**
+     * Inflates the fragment's view, overridden from Fragment.java
+     *
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return Return the View for the fragment's UI
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

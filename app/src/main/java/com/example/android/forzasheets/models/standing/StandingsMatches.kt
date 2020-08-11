@@ -6,6 +6,17 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
+/**
+ * The class represents the retrieved standings
+ *
+ * This class is used to represent the matches info retrieved from the API
+ *
+ * @param [matchesId] unique id to represent each standingsMatches object
+ * @param [matchesPlayed] number of matches played
+ * @param [matchesWon] number of matches won
+ * @param [matchesDrawn] number of matches drawn
+ * @param [matchesLost] number of matches lost
+ */
 @Entity(tableName = "matches")
 data class StandingsMatches(
 

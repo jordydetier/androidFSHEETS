@@ -17,13 +17,43 @@ import com.example.android.forzasheets.models.player.detail.PlayerDetail
 
 
 class PlayerDetailsFragment : Fragment() {
+
+    /**
+     * Binding object to access the fragment's layout
+     */
     private lateinit var binding: FragmentPlayerDetailsBinding
+
+    /**
+     * Id of the player to get the correct data from the API
+     */
     private lateinit var playerId: String
+    /**
+     * Image-URL to show the team crest of the team the player plays for
+     */
     private lateinit var teamLogo: String
+    /**
+     * ViewModel which contains the business-logic
+     */
     private lateinit var viewModel: PlayerDetailsViewModel
+
+    /**
+     * Boolean to check if a loading spinner should be shown or not
+     */
     private var flag: Boolean = false
 
 
+    /**
+     * Inflates the fragment's view, overridden from Fragment.java
+     *
+     * @param inflater The LayoutInflater object that can be used to inflate
+     * any views in the fragment,
+     * @param container If non-null, this is the parent view that the fragment's
+     * UI should be attached to.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     *
+     * @return Return the View for the fragment's UI
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,7 +79,10 @@ class PlayerDetailsFragment : Fragment() {
         return binding.root
     }
 
-
+    /**
+     * Retrieves a PlayerDetail object and gives that to the bindElements function. Uses Higher order functions to validate success and error
+     *
+     */
     private fun getPlayerDetails() {
         viewModel.getPlayerDetails(
             viewModel.selectedPlayerId.value!!,
@@ -73,6 +106,10 @@ class PlayerDetailsFragment : Fragment() {
         )
     }
 
+    /**
+     * Binds all the elements with data from the chosen player
+     *
+     */
     private fun bindElements(player: PlayerDetail) {
         binding.progressBarPlayerDetail.visibility = View.GONE
         binding.playerDetailFirstName.text = player.firstName

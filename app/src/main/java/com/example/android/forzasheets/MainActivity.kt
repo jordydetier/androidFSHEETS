@@ -12,8 +12,20 @@ import com.example.android.forzasheets.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
+    /**
+     * Object used to make the navigation drawer
+     */
     private lateinit var drawerLayout: DrawerLayout
+
+    /**
+     * The controller responsible for navigation in the app
+     */
     private lateinit var navController: NavController
+
+    /**
+     * Gets called when the activity is created. If there is a [savedInstanceState], it gets restored
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding =
@@ -73,6 +85,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Used for navigation between fragments
+     */
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)

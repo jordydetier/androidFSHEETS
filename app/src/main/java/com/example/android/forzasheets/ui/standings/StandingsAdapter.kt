@@ -12,13 +12,30 @@ import com.example.android.forzasheets.R
 import com.example.android.forzasheets.models.standing.Standings
 
 
+/**
+ * Standings' Recyclerview Adapter
+ *
+ * This adapter is used to load individual list-items
+ *
+ * @param standings the list of standings which needs to be loaded
+ * @param onClickListener object used to know when and which a Standings object is clicked
+ *
+ */
 class StandingsAdapter(
     private var standings: MutableList<Standings>,
     private val onClickListener: OnClickListener
 ) : RecyclerView.Adapter<StandingsAdapter.StandingsViewHolder>() {
 
+    /**
+     * Returns the total number of items in the data set held by the adapter.
+     *
+     */
     override fun getItemCount() = standings.size
 
+    /**
+     * Called by RecyclerView to display the data at the specified position.
+     *
+     */
     override fun onBindViewHolder(holder: StandingsViewHolder, position: Int) {
         val item = standings[position]
         holder.itemView.setOnClickListener {
@@ -27,7 +44,11 @@ class StandingsAdapter(
         holder.bind(item)
     }
 
-
+    /**
+     * Called when RecyclerView needs a new ViewHolder of the given type to represent
+     * an item.
+     *
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StandingsViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -35,6 +56,9 @@ class StandingsAdapter(
         return StandingsViewHolder(view)
     }
 
+    /**
+     * Adds a list of [Standings] to the current list
+     */
     fun appendStandings(standings: List<Standings>) {
         if (this.standings != standings) {
             this.standings.addAll(standings)
@@ -45,6 +69,11 @@ class StandingsAdapter(
         }
     }
 
+    /**
+     * Used by the Adapter to host individual items
+     *
+     * @param itemView represents the view of the adapter list item
+     */
     inner class StandingsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val teamPosition: TextView = itemView.findViewById(R.id.team_position)
@@ -72,6 +101,10 @@ class StandingsAdapter(
         }
     }
 
+    /**
+     *
+     *  used to know when and which a Standings object is clicked
+     */
     class OnClickListener(val clickListener: (teamId: String) -> Unit) {
         fun onClick(teamId: String) = clickListener(teamId)
     }
